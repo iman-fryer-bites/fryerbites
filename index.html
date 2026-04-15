@@ -2,92 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fryer Bites Recipe</title>
+  <title>Fryer Bites</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
       margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fdf8f3, #f5efe8);
     }
 
     .container {
-      max-width: 600px;
-      margin: auto;
+      max-width: 700px;
+      margin: 40px auto;
       background: #fff;
-      padding: 20px;
-      border-radius: 12px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    h1 {
+    .image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f4a261;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
       margin-bottom: 10px;
     }
 
-    img {
-      width: 100%;
-      border-radius: 10px;
+    h1 {
+      margin: 5px 0 10px;
+      font-size: 28px;
     }
 
-    h2 {
+    .desc {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section {
       margin-top: 20px;
     }
 
-    ul {
-      padding-left: 20px;
+    .section h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
     }
 
-    button {
-      margin-top: 15px;
-      padding: 10px;
-      background: orange;
+    ul, ol {
+      padding-left: 20px;
+      color: #444;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      background: linear-gradient(to right, #f4a261, #e76f51);
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
+      font-size: 16px;
       cursor: pointer;
+      transition: 0.3s;
     }
 
-    button:hover {
-      background: darkorange;
+    .btn:hover {
+      transform: scale(1.03);
     }
 
     .steps {
       display: none;
-      margin-top: 10px;
+      margin-top: 15px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      padding: 15px;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Air Fryer Brownies 🍫</h1>
 
-    <img src="https://via.placeholder.com/600x300" alt="Brownies">
+    <img class="image" src="https://images.unsplash.com/photo-1606312619344-ec0f0c7f7d3e" alt="Brownies">
 
-    <h2>Ingredients</h2>
-    <ul>
-      <li>1 cup flour</li>
-      <li>1/2 cup cocoa powder</li>
-      <li>1/2 cup sugar</li>
-      <li>2 eggs</li>
-    </ul>
+    <div class="content">
+      <span class="badge">Sweet Treat 🍫</span>
 
-    <button onclick="toggleSteps()">Show Steps</button>
+      <h1>Air Fryer Brownies</h1>
 
-    <div class="steps" id="steps">
-      <h2>Instructions</h2>
-      <ol>
-        <li>Mix all ingredients</li>
-        <li>Pour into pan</li>
-        <li>Air fry at 180°C for 12 mins</li>
-      </ol>
+      <p class="desc">
+        Rich, fudgy brownies made quickly in your air fryer. Perfect for late-night cravings or quick desserts.
+      </p>
+
+      <div class="section">
+        <h2>Ingredients</h2>
+        <ul>
+          <li>1 cup flour</li>
+          <li>1/2 cup cocoa powder</li>
+          <li>1/2 cup sugar</li>
+          <li>2 eggs</li>
+        </ul>
+      </div>
+
+      <button class="btn" onclick="toggleSteps()">View Instructions</button>
+
+      <div class="steps" id="steps">
+        <div class="section">
+          <h2>Instructions</h2>
+          <ol>
+            <li>Mix all ingredients until smooth</li>
+            <li>Pour into a greased pan</li>
+            <li>Air fry at 180°C for 12 minutes</li>
+          </ol>
+        </div>
+      </div>
     </div>
+
+    <div class="footer">
+      Fryer Bites • Easy Air Fryer Recipes
+    </div>
+
   </div>
 
   <script>
     function toggleSteps() {
       const steps = document.getElementById("steps");
       steps.style.display =
-        steps.style.display === "none" ? "block" : "none";
+        steps.style.display === "block" ? "none" : "block";
     }
   </script>
 
