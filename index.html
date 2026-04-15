@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fryer Bites Recipe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkorange;
+    }
+
+    .steps {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Air Fryer Brownies 🍫</h1>
+
+    <img src="https://via.placeholder.com/600x300" alt="Brownies">
+
+    <h2>Ingredients</h2>
+    <ul>
+      <li>1 cup flour</li>
+      <li>1/2 cup cocoa powder</li>
+      <li>1/2 cup sugar</li>
+      <li>2 eggs</li>
+    </ul>
+
+    <button onclick="toggleSteps()">Show Steps</button>
+
+    <div class="steps" id="steps">
+      <h2>Instructions</h2>
+      <ol>
+        <li>Mix all ingredients</li>
+        <li>Pour into pan</li>
+        <li>Air fry at 180°C for 12 mins</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    function toggleSteps() {
+      const steps = document.getElementById("steps");
+      steps.style.display =
+        steps.style.display === "none" ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
